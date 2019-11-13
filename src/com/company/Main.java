@@ -6,11 +6,24 @@ public class Main {
 
 
     public static void main(String[] args) {
-	// write your code here
 
-        Scanner keyBoard_Origin = new Scanner(System.in);
+        // write your code here
 
-        String key_Input = keyBoard_Origin.next();
+        CommandMenu.displayHelp();
+
+        boolean continueGame = true;
+
+        do {
+            int ch = CommandMenu.getUserChoice();
+            // System.out.println(ch);
+           continueGame = CommandMenu.processCmd(ch);
+
+        }
+        while (continueGame == true);
+
+
+
+
 
     }
 }
