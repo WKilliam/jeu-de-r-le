@@ -8,11 +8,11 @@ public class Noob {
     private int initiative;
 
     // constructor
-    public Noob(String name, int damages, int life, int initiative) {
+    public Noob(String name) {
         this.name = name;
-        this.damages = damages;
-        this.life = life;
-        this.initiative = initiative;
+        this.damages = 10;
+        this.life = 50;
+        this.initiative = 20;
 
 
     }

@@ -9,6 +9,12 @@ public class Main {
 
         // write your code here
 
+        System.out.println("+--------------------------------+");
+        System.out.println("|                                |");
+        System.out.println("|       FIGHT       CLUB         |");
+        System.out.println("|                                |");
+        System.out.println("+--------------------------------+");
+
         CommandMenu.displayHelp();
 
         boolean continueGame = true;
@@ -22,8 +28,10 @@ public class Main {
         while (continueGame == true);
 
 
+        Noob t = new Noob("teddy");
 
-
+       int d = t.getDamages();
+        System.out.println(d);
 
     }
 }
