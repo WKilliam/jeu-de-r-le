@@ -1,11 +1,14 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CommandMenu {
     /**
      * Function that displays the menu
      */
+
+
     static void displayHelp() {
         System.out.println("**********************************");
         System.out.println("*       Menu                     *");
@@ -57,12 +60,15 @@ public class CommandMenu {
         boolean continueGame = true;
 
         switch (choice) {
+            default:
+                System.out.println("Command not supported");
+                // no break
             case 1:
                 displayHelp();
                 break;
 
             case 2:
-
+                createCharacter();
                 break;
 
             case 3:
@@ -83,12 +89,19 @@ public class CommandMenu {
 
             case 7:
                 continueGame = false;
-
-            default:
-                System.out.println("Command not supported");
+                break;
 
         }
         return continueGame;
+    }
+
+    static void createCharacter(){
+        // TODO
+        // todo get char attributes
+        Noob nb = new Noob("Noob1");
+
+        // add char into list (??) or return noob object ?
+
     }
 
 

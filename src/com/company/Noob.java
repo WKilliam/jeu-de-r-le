@@ -9,16 +9,27 @@ public class Noob {
 
     // constructor
     public Noob(String name) {
-        this.name = name;
-        this.damages = 10;
-        this.life = 50;
-        this.initiative = 20;
-
-
+        this(name,10,50,20);
     }
 
+    public Noob(String name, int dmg, int lif, int i) {
+        this.name = name;
+        this.damages = dmg;
+        this.life = lif;
+        this.initiative = i;
+    }
+
+    public Noob(String choice, String choice1) {
+    }
+
+
     public String toString(){
-        return "name=" + this.name + " damages=" + this.damages + " life=" + this.life + " initiative=" + this.initiative;
+        String out = "";
+        out = out + "name       = " + this.name + "\n";
+        out = out + "damages    = " + this.damages + "\n";
+        out = out + "life       = " + this.life + "\n";
+        out = out + "initiative = " + this.initiative + "\n";
+        return out;
     }
 
 

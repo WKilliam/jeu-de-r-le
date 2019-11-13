@@ -1,19 +1,19 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    static int test(){
-        
-    }
-
-
     public static void main(String[] args) {
-<<<<<<< HEAD
+
 	// write your code here
-        
-=======
+/*
+
+
+
+
 
         // write your code here
 
@@ -36,15 +36,34 @@ public class Main {
         while (continueGame == true);
 
 
-        Noob t = new Noob("teddy");
 
-<<<<<<< HEAD
 
->>>>>>> master
-=======
-       int d = t.getDamages();
-        System.out.println(d);
->>>>>>> master
+        Noob teddy = new Noob("teddy");
+
+
+       int d = teddy.getDamages();
+        System.out.println(teddy);
+
+
+        // liste
+        List<Noob> myList = new ArrayList<Noob>();
+        // add
+        // get
+        // remove
+
+
+        Noob kevin = new Noob("Kev1");
+        Noob badass = new Noob("Killa", 100,1000,100);
+*/
+
+ArrayList lol = new ArrayList();
+CharacterManagement.addToLs(CharacterManagement.createCharacter(),lol);
+
+System.out.println(lol.get(0));
+
+
+
+
 
     }
 }
