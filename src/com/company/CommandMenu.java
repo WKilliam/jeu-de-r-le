@@ -67,30 +67,18 @@ public class CommandMenu {
             default:
                 System.out.println("Command not supported");
                 break;
-            case 1:
+            case 1://
                 displayHelp();
                 System.out.println(noobList);
                 break;
 
             case 2:
-                Noob character = NoobManagement.createCharacter();
-                noobList.add(character);
+                 NoobManagement.createCharacter(noobList);
                 break;
 
             case 3:
-                if(noobList.size()==0){
-                    System.out.println("There are no Noob here");
-                    displayHelp();
-                }
-                else {
-                    for (int i = 0; i < noobList.size(); i++) {
-                        character = (Noob) noobList.get(i);
-                        System.out.println(i + " - " + character.getName());
-                    }
-                }
-
-
-                break;
+                 NoobManagement.displayAllCharacters(noobList);
+                 break;
 
             case 4:
                 /*
@@ -113,12 +101,10 @@ public class CommandMenu {
                     displayHelp();
                 }
                 else{
-                    for (int i = 0; i < noobList.size(); i++) {
-                        character = noobList.get(i);
-                        System.out.println(i + " - " + character.getName());
-                    }
+                    NoobManagement.displayAllCharacters(noobList);
                     NoobManagement.deleteNoob(noobList);
                 }
+
                 //Demander si l'utilisateur est sur de le supprimer. Afficher un message (pq pas une ref a Robert Paulson ??) au moment du delete.
 
                 break;

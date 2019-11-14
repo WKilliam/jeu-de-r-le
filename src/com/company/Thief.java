@@ -18,7 +18,7 @@ public class Thief extends Noob {
      * @param critical is an Float
      */
     public Thief(String name, int dmg, int lif, int i, float dodge, float critical){
-        super(name, dmg, lif, i);
+        super(name,"thief", dmg, lif, i);
         this.dodgeProba    = dodge;
         this.criticalProba = critical;
     }
