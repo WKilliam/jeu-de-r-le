@@ -30,8 +30,8 @@ public class Thief extends Noob {
     public String toString(){
         String out = "";
         out = out + super.toString();
-        out = out + "Dodge = " + this.dodgeProba + "\n";
-        out = out + "Critical = " + this.criticalProba + "\n";
+        out = out + "Dodge      = " + this.dodgeProba + "\n";
+        out = out + "Critical   = " + this.criticalProba + "\n";
         return out;
     }
 

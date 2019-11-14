@@ -81,14 +81,8 @@ public class CommandMenu {
                  break;
 
             case 4:
-                /*
-                System.out.println("Enter Noob index for stats");
-                Scanner sc = new Scanner(System.in);
-
-                    // ask the user to enter an index
-                    character = noobList.get(index);
-                    print(character);
-                */
+                NoobManagement.displayAllCharacters(noobList);
+                NoobManagement.getStats(noobList);
                 break;
 
             case 5:

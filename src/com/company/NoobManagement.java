@@ -108,12 +108,14 @@ public class NoobManagement {
         }
     }
 
-   /* static Noob getStats(int number, ArrayList noobList, Noob character) {
+    static void getStats(ArrayList noobList) {
 
         System.out.println("Select your Noob");
         Scanner sc = new Scanner(System.in);
-        System.out.println(character.getName());
-    }*/
+        int noobIdx = sc.nextInt();
+        Noob noob = (Noob)noobList.get(noobIdx);
+        System.out.println(noob.toString());
+    }
 }
 
 /*
