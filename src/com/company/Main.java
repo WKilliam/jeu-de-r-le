@@ -1,15 +1,17 @@
 package com.company;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        ArrayList list = new ArrayList();
 
 	// write your code here
-/*
+
 
 
 
@@ -26,11 +28,12 @@ public class Main {
         CommandMenu.displayHelp();
 
         boolean continueGame = true;
+        ArrayList<Noob> noobList = new ArrayList<Noob>();
 
         do {
             int ch = CommandMenu.getUserChoice();
             // System.out.println(ch);
-           continueGame = CommandMenu.processCmd(ch);
+           continueGame = CommandMenu.processCmd(ch, noobList);
 
         }
         while (continueGame == true);
@@ -40,7 +43,7 @@ public class Main {
 
         Noob teddy = new Noob("teddy");
 
-
+/*
        int d = teddy.getDamages();
         System.out.println(teddy);
 
@@ -54,14 +57,14 @@ public class Main {
 
         Noob kevin = new Noob("Kev1");
         Noob badass = new Noob("Killa", 100,1000,100);
-*/
+
 
 ArrayList lol = new ArrayList();
-CharacterManagement.addToLs(CharacterManagement.createCharacter(),lol);
+NoobManagement.addToList(NoobManagement.createCharacter(),lol);
 
 System.out.println(lol.get(0));
 
-
+*/
 
 
 

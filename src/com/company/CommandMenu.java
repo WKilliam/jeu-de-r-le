@@ -24,7 +24,7 @@ public class CommandMenu {
     }
 
     /**
-     * Functions that takes players's input
+     * Functions that takes players's input and convert into an integer
      * @return an integer
      */
     static int getUserChoice(){
