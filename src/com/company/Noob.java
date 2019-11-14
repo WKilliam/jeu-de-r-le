@@ -33,6 +33,10 @@ public class Noob {
         return out;
     }
 
+    void hurt(int damages) {
+        this.life = this.getLife() - damages;
+    }
+
 
     // get / set
     public String getName() {

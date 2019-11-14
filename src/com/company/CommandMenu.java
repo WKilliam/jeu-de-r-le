@@ -69,6 +69,7 @@ public class CommandMenu {
                 break;
             case 1:
                 displayHelp();
+                System.out.println(noobList);
                 break;
 
             case 2:
@@ -91,8 +92,15 @@ public class CommandMenu {
 
                 break;
 
-            case 4://// NoobManagement.getStats();
+            case 4:
+                /*
+                System.out.println("Enter Noob index for stats");
+                Scanner sc = new Scanner(System.in);
 
+                    // ask the user to enter an index
+                    character = noobList.get(index);
+                    print(character);
+                */
                 break;
 
             case 5:
@@ -111,6 +119,7 @@ public class CommandMenu {
                     }
                     NoobManagement.deleteNoob(noobList);
                 }
+                //Demander si l'utilisateur est sur de le supprimer. Afficher un message au moment du delete.
 
                 break;
 

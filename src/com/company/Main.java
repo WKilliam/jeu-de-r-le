@@ -41,7 +41,7 @@ public class Main {
 
 
 
-        Noob teddy = new Noob("teddy");
+        Thief teddy = new Thief("teddy",100,100,100,0.5f,0.5f);
 
 /*
        int d = teddy.getDamages();

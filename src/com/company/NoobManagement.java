@@ -11,12 +11,13 @@ import java.util.Scanner;
 
 public class NoobManagement {
 
-    public  NoobManagement() {
+    public NoobManagement() {
     }
 
 
     /**
      * Function that initialize a character with players's inputs
+     *
      * @return
      */
     static Noob createCharacter() {
@@ -43,16 +44,37 @@ public class NoobManagement {
         return nb;
     }
 
-    static void deleteNoob(ArrayList nooblist){
-        try{
-            System.out.println("you have "+nooblist.size()+"character , select your delete choose");
-            Scanner sc =new Scanner(System.in);
-            int choose =sc.nextInt();
+    static void deleteNoob(ArrayList nooblist) {
+        try {
+            System.out.println("you have " + nooblist.size() + "character , select your delete choose");
+            Scanner sc = new Scanner(System.in);
+            int choose = sc.nextInt();
             nooblist.remove(choose);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("please select only number");
         }
     }
+
+   /* static Noob getStats(int number, ArrayList noobList, Noob character) {
+
+        System.out.println("Select your Noob");
+        Scanner sc = new Scanner(System.in);
+        System.out.println(character.getName());
+    }*/
+}
+
+/*
+
+
+
+        System.out.println(choice);*/
+        // System.out.println(choice + " - " + choice.getName()+" "+ choice.getLife()+" "+ choice.getDamages() +" "+ choice.getInitiative());
+        //  System.out.println("character's stats");
+
+
+
+
+
 
 
 
@@ -63,4 +85,3 @@ public class NoobManagement {
 
 
 
-}
