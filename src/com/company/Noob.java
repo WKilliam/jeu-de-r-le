@@ -1,16 +1,21 @@
 package com.company;
 
 public class Noob {
+
+
     //properties
     private String name;
     private int damages;
     private int life;
     private int initiative;
 
-    // constructor
-    public Noob(String name) {
-        this(name,10,50,20);
-    }
+    /**
+     * Constructor of default character
+     * @param name is a String
+     * @param dmg is an Integer
+     * @param lif is an Integer
+     * @param i is an Integer
+     */
 
     public Noob(String name, int dmg, int lif, int i) {
         this.name = name;
@@ -19,6 +24,7 @@ public class Noob {
         this.initiative = i;
     }
 
+    //----------------------------------------------------------------------------------------??????
     public Noob(String choice, String choice1) {
     }
 
@@ -33,12 +39,19 @@ public class Noob {
         return out;
     }
 
+    /**
+     * Function that makes take damages to a character
+     * @param damages
+     */
     void hurt(int damages) {
         this.life = this.getLife() - damages;
     }
 
 
-    // get / set
+    /**
+     * Getters
+     *
+     */
     public String getName() {
         return this.name;
     }
@@ -55,6 +68,10 @@ public class Noob {
         return this.initiative;
     }
 
+    /**
+     * Setters
+     *
+     */
     public void setName(String name) {
         this.name = name;
     }

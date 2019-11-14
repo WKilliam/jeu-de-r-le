@@ -8,16 +8,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+
         ArrayList list = new ArrayList();
 
-	// write your code here
-
-
-
-
-
-
-        // write your code here
 
         System.out.println("+--------------------------------+");
         System.out.println("|                                |");

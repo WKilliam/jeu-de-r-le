@@ -56,7 +56,7 @@ public class CommandMenu {
 
     /**
      * Functions that process the choice of the user
-     * @param choice is a integer that represents the choice of the user
+     * @param choice is an integer that represents choices from user
      * @return a boolean
      */
    static  boolean processCmd(int choice, ArrayList<Noob> noobList) {
@@ -119,7 +119,7 @@ public class CommandMenu {
                     }
                     NoobManagement.deleteNoob(noobList);
                 }
-                //Demander si l'utilisateur est sur de le supprimer. Afficher un message au moment du delete.
+                //Demander si l'utilisateur est sur de le supprimer. Afficher un message (pq pas une ref a Robert Paulson ??) au moment du delete.
 
                 break;
 

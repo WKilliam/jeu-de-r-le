@@ -16,9 +16,9 @@ public class NoobManagement {
 
 
     /**
-     * Function that initialize a character with players's inputs
+     * Function that initialize a default character with players's inputs
      *
-     * @return
+     * @return an object. Contains the name, health points, damages and initiative's character.
      */
     static Noob createCharacter() {
         Noob nb = null;
@@ -44,14 +44,20 @@ public class NoobManagement {
         return nb;
     }
 
+    /**
+     * Function that makes delete a character. When user want to delete, he needs to enter the index of character.
+     *
+     * @param nooblist
+     */
     static void deleteNoob(ArrayList nooblist) {
         try {
             System.out.println("you have " + nooblist.size() + "character , select your delete choose");
             Scanner sc = new Scanner(System.in);
             int choose = sc.nextInt();
             nooblist.remove(choose);
+            System.out.println("His name is Robert Paulson");
         } catch (Exception e) {
-            System.out.println("please select only number");
+            System.out.println("Haha, lucky boy, his hour has not arrives yet!");
         }
     }
 

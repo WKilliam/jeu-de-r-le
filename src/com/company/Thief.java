@@ -1,12 +1,32 @@
 package com.company;
+
+/**
+ * Class Thief extender of Class Noob.
+ */
 public class Thief extends Noob {
+
     private float dodgeProba;
     private float criticalProba;
+
+    /**
+     * Attributes for Thief archetype. Contains "dodge" and "critical attack" more than Class Noob
+     * @param name
+     * @param dmg is an Integer
+     * @param lif is an Integer
+     * @param i is an Integer
+     * @param dodge is an Float
+     * @param critical is an Float
+     */
     public Thief(String name, int dmg, int lif, int i, float dodge, float critical){
         super(name, dmg, lif, i);
         this.dodgeProba    = dodge;
         this.criticalProba = critical;
     }
+
+    /**
+     *
+     * @return
+     */
     public String toString(){
         String out = "";
         out = out + super.toString();
@@ -14,9 +34,13 @@ public class Thief extends Noob {
         out = out + "Critical = " + this.criticalProba + "\n";
         return out;
     }
+
+    /**
+     * Function that makes Thief archetype can probably dodges an attack from his opponent
+     * If the attack isn't dodge, the character takes damages from his opponent
+     * @param dmg
+     */
     void hurt(int dmg){
-        // si le lancer de dé donne une valeur inferieure ou egalke a la proba d’esquive alors j’esquive
-        // sinon je prends les degats
         if (Math.random()<=this.dodgeProba){
             System.out.println("Nope");
         }
