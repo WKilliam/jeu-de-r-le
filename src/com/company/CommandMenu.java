@@ -1,9 +1,12 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CommandMenu {
+
+
     /**
      * Function that displays the menu
      */
@@ -14,9 +17,9 @@ public class CommandMenu {
         System.out.println("*       Menu                     *");
         System.out.println("*  1-Help                        *");
         System.out.println("*  2-Create Character            *");
-        System.out.println("*  3-Characters List             *");
-        System.out.println("*  4-Characters Stats            *");
-        System.out.println("*  5-Fight !                     *");
+        System.out.println("*  3-List Characters             *");
+        System.out.println("*  4-Get Characters Stats        *");
+        System.out.println("*  5-Start Fight !               *");
         System.out.println("*  6-Delete a Character          *");
         System.out.println("*  7-Quit                        *");
         System.out.println("**********************************");
@@ -56,26 +59,39 @@ public class CommandMenu {
      * @param choice is a integer that represents the choice of the user
      * @return a boolean
      */
-    static boolean processCmd(int choice) {
+   static  boolean processCmd(int choice, ArrayList<Noob> noobList) {
         boolean continueGame = true;
+
 
         switch (choice) {
             default:
                 System.out.println("Command not supported");
-                // no break
+                break;
             case 1:
                 displayHelp();
                 break;
 
             case 2:
-                createCharacter();
+                Noob character = NoobManagement.createCharacter();
+                noobList.add(character);
                 break;
 
             case 3:
+                if(noobList.size()==0){
+                    System.out.println("There are no Noob here");
+                    displayHelp();
+                }
+                else {
+                    for (int i = 0; i < noobList.size(); i++) {
+                        character = (Noob) noobList.get(i);
+                        System.out.println(i + " - " + character.getName());
+                    }
+                }
+
 
                 break;
 
-            case 4:
+            case 4://// NoobManagement.getStats();
 
                 break;
 
@@ -84,6 +100,17 @@ public class CommandMenu {
                 break;
 
             case 6:
+                if(noobList.size()==0){
+                    System.out.println("There are no Noob here");
+                    displayHelp();
+                }
+                else{
+                    for (int i = 0; i < noobList.size(); i++) {
+                        character = noobList.get(i);
+                        System.out.println(i + " - " + character.getName());
+                    }
+                    NoobManagement.deleteNoob(noobList);
+                }
 
                 break;
 
@@ -95,16 +122,11 @@ public class CommandMenu {
         return continueGame;
     }
 
-    static void createCharacter(){
-        // TODO
-        // todo get char attributes
-        Noob nb = new Noob("Noob1");
 
-        // add char into list (??) or return noob object ?
 
     }
 
 
 
 
-}
+

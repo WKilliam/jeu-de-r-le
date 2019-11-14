@@ -11,13 +11,13 @@ public class FightManagement {
      * @param list where the characters are stocked
      * @return
      */
-    public Object charSelection(ArrayList<Noob> list){
-
+/*    public Object charSelection(ArrayList<Noob> list){
+        Noob character1;
         try{
             System.out.println("tape un truc");
             Scanner sc = new Scanner(System.in);
             int index1 = sc.nextInt();
-            Noob character1 = list.get(index1);
+            character1 = list.get(index1);
 
             System.out.println("tape un autre truc");
             int index2 = sc.nextInt();
@@ -29,15 +29,8 @@ public class FightManagement {
 
 
         }
-
-
-
-
-
-
-
-
+        return character1;
+        */
 
 
     }
-}

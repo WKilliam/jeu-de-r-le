@@ -1,46 +1,66 @@
-package com.company;
-import java.util.ArrayList;
-import java.util.Scanner;
-public class CharacterManagement {
-    static Noob createCharacter(){
-        // create null object
-        Noob nb = null;
-        // TODO
-        // todo get char attributes
-        String choose;
-        int choose1 = 0;
-        int choose2=0;
-        int choose3=0;
-        try {
-            System.out.println(“Please choose your name :“);
-            Scanner sc = new Scanner(System.in);
-            choose = sc.nextLine();
-            System.out.println(“Please choose your damage :“);
-            Scanner sc1 = new Scanner(System.in);
-            choose1 = sc1.nextInt();
-            System.out.println(“Please choose your life :“);
-            Scanner sc2 = new Scanner(System.in);
-            choose2 = sc2.nextInt();
-            System.out.println(“Please choose your initiative :” );
-            Scanner sc3 = new Scanner(System.in);
-            choose3 = sc3.nextInt();
-            nb = new Noob(choose,choose1,choose2,choose3);
-        }
-        catch(Exception e){
-            System.out.println(“Invalid choice”);
-        }
-        // return the new Noob object or null
-        return nb;
-        // add char into list (??) or return noob object ?
-    }
-    static void addToLs(Noob createCharact, ArrayList<Noob> list){
-        list.add(createCharact);
-    }
-    static void displayNoob(ArrayList<Noob> list){
-        int i;
-        for (i=0;i<=list.size();i=i+i){
-            System.out.println(“Character N “+i+” : “+ list.get(i));
-        }
-    }
-}
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
 
+package com.company;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class NoobManagement {
+
+    public  NoobManagement() {
+    }
+
+
+    /**
+     * Function that initialize a character with players's inputs
+     * @return
+     */
+    static Noob createCharacter() {
+        Noob nb = null;
+
+        try {
+            System.out.println("Please choose your name :");
+            Scanner sc = new Scanner(System.in);
+            String choose = sc.nextLine();
+            System.out.println("Please choose your damage :");
+            Scanner sc1 = new Scanner(System.in);
+            int choose1 = sc1.nextInt();
+            System.out.println("Please choose your life :");
+            Scanner sc2 = new Scanner(System.in);
+            int choose2 = sc2.nextInt();
+            System.out.println("Please choose your initiative :");
+            Scanner sc3 = new Scanner(System.in);
+            int choose3 = sc3.nextInt();
+            nb = new Noob(choose, choose1, choose2, choose3);
+        } catch (Exception var9) {
+            System.out.println("Invalid choice");
+        }
+
+        return nb;
+    }
+
+    static void deleteNoob(ArrayList nooblist){
+        try{
+            System.out.println("you have "+nooblist.size()+"character , select your delete choose");
+            Scanner sc =new Scanner(System.in);
+            int choose =sc.nextInt();
+            nooblist.remove(choose);
+        }catch (Exception e){
+            System.out.println("please select only number");
+        }
+    }
+
+
+
+
+
+       //static void displayNoobList (ArrayList noobList,Noob n)
+
+
+
+
+}
