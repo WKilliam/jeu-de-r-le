@@ -13,11 +13,11 @@ public class Main {
         ArrayList list = new ArrayList();
 
 
-        System.out.println("+--------------------------------+");
-        System.out.println("|                                |");
-        System.out.println("|       FIGHT       CLUB         |");
-        System.out.println("|                                |");
-        System.out.println("+--------------------------------+");
+        CommandMenu.myPrint("Red", "+--------------------------------+");
+        CommandMenu.myPrint("Red", "|                                |");
+        CommandMenu.myPrint("Red", "|       FIGHT       CLUB         |");
+        CommandMenu.myPrint("Red", "|                                |");
+        CommandMenu.myPrint("Red", "+--------------------------------+");
 
         CommandMenu.displayHelp();
 
@@ -34,31 +34,20 @@ public class Main {
 
 
 
+        Warrior romain = new Warrior("romain",100,100,100,20);
 
-        Thief teddy = new Thief("teddy",100,100,100,0.5f,0.5f);
+        Thief teddy = new Thief("teddy",100,100,100,23,23);
 
-/*
-       int d = teddy.getDamages();
-        System.out.println(teddy);
-
-
-        // liste
-        List<Noob> myList = new ArrayList<Noob>();
-        // add
-        // get
-        // remove
+        teddy.getDamages();
+        System.out.println(teddy.getDamages());
+        System.out.println(teddy.getDamages());
 
 
-        Noob kevin = new Noob("Kev1");
-        Noob badass = new Noob("Killa", 100,1000,100);
 
 
-ArrayList lol = new ArrayList();
-NoobManagement.addToList(NoobManagement.createCharacter(),lol);
 
-System.out.println(lol.get(0));
 
-*/
+
 
 
 

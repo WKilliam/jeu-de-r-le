@@ -13,16 +13,16 @@ public class CommandMenu {
 
 
     static void displayHelp() {
-        System.out.println("**********************************");
-        System.out.println("*       Menu                     *");
-        System.out.println("*  1-Help                        *");
-        System.out.println("*  2-Create Character            *");
-        System.out.println("*  3-List Characters             *");
-        System.out.println("*  4-Get Characters Stats        *");
-        System.out.println("*  5-Start Fight !               *");
-        System.out.println("*  6-Delete a Character          *");
-        System.out.println("*  7-Quit                        *");
-        System.out.println("**********************************");
+        myPrint("Blue","**********************************");
+        myPrint("Blue","*       Menu                     *");
+        myPrint("Blue","*  1-Help                        *");
+        myPrint("Blue","*  2-Create Character            *");
+        myPrint("Blue","*  3-List Characters             *");
+        myPrint("Blue","*  4-Get Characters Stats        *");
+        myPrint("Blue","*  5-Start Fight !               *");
+        myPrint("Blue","*  6-Delete a Character          *");
+        myPrint("Blue","*  7-Quit                        *");
+        myPrint("Blue","**********************************");
 
     }
 
@@ -86,6 +86,12 @@ public class CommandMenu {
                 break;
 
             case 5:
+                ArrayList<Noob> fight_Club = new ArrayList<Noob>();
+                FightManagement.select_character_for_fight(noobList,fight_Club);
+                FightManagement.fight_turn_OF_INITIATIVE(fight_Club);
+                NoobManagement.displayAllCharacters(fight_Club);
+                FightManagement.fight_club(fight_Club.get(0),fight_Club.get(1));
+
 
                 break;
 
@@ -109,6 +115,26 @@ public class CommandMenu {
 
         }
         return continueGame;
+    }
+
+    /**
+     * function that colors string
+     * @param color is a string
+     * @param message is a string that we want to color
+     */
+    static void myPrint(String color,String message){
+        switch (color){
+            case"Blue": System.out.println("\033[34m" + message +"\033[0m");
+                break;
+            case"Green": System.out.println("\033[32m" + message +"\033[0m");
+                break;
+            case"Red": System.out.println("\033[31m" + message +"\033[0m");
+                break;
+            case"Yellow": System.out.println("\033[33m" + message +"\033[0m");
+                break;
+            default:
+                System.out.println("Error Unknown Color");
+        }
     }
 
 

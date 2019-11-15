@@ -7,27 +7,29 @@ public class Thief extends Noob {
 
     private float dodgeProba;
     private float criticalProba;
+    private boolean isLastCrit;
 
     /**
      * Attributes for Thief archetype. Contains "dodge" and "critical attack" more than Class Noob
-     * @param name
-     * @param dmg is an Integer
-     * @param lif is an Integer
-     * @param i is an Integer
-     * @param dodge is an Float
-     * @param critical is an Float
+     *
+     * @param name       is a string
+     * @param damages    is an Integer value for damages point
+     * @param life       an Integer value for Health's point
+     * @param initiative is an Integer value for the initiative
+     * @param dodge      is an Integer value for the dodge proba between 0 and 100
+     * @param critical   is an Integer value for the critical's Hit between 0 and 100
      */
-    public Thief(String name, int dmg, int lif, int i, float dodge, float critical){
-        super(name,"thief", dmg, lif, i);
-        this.dodgeProba    = dodge;
+    public Thief(String name, int damages, int life, int initiative, int dodge, int critical) {
+        super(name, "thief", damages, life, initiative);
+        this.dodgeProba = dodge;
         this.criticalProba = critical;
+        this.isLastCrit = false;
     }
 
     /**
-     *
      * @return
      */
-    public String toString(){
+    public String toString() {
         String out = "";
         out = out + super.toString();
         out = out + "Dodge      = " + this.dodgeProba + "\n";
@@ -38,24 +40,35 @@ public class Thief extends Noob {
     /**
      * Function that makes Thief archetype can probably dodges an attack from his opponent
      * If the attack isn't dodge, the character takes damages from his opponent
+     *
      * @param dmg
      */
-    void hurt(int dmg){
-        if (Math.random()<=this.dodgeProba){
+    void hurt(int dmg) {
+        if ((Math.random()*100) <= this.dodgeProba) {
             System.out.println("Nope");
-        }
-        else {
+        } else {
             super.hurt(dmg);
         }
     }
-   /*
-   //Si le Voleur a deja CC -> ne peut pas refaire un CC. utiliser un booléen
-   if(Math.random()<=this.criticalProba){
-       super.hurt(dmg);
-   }
-       else{
-       super.hurt(dmg*2);
-       System.out.println(“Critical hit”);
-   }
-   */
+
+
+    /**
+     *
+     * @return
+     */
+    public int getDamages() {
+
+        if ((Math.random()*100) <= this.criticalProba && isLastCrit == false) {
+            int d = super.getDamages() * 2;
+            isLastCrit = true;
+            return d;
+
+        } else {
+            isLastCrit = false;
+            return super.getDamages();
+        }
+    }
+
+
 }
+

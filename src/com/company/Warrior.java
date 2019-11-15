@@ -8,16 +8,24 @@ public class Warrior extends Noob {
     private int shield;
 
 
-    public Warrior(String name, int dmg, int lif, int i,int sh) {
-        super(name,"warrior", dmg, lif, i);
-        this.shield = sh;
+    public Warrior(String name, int damages, int life, int initiative,int shield) {
+        super(name,"warrior", damages, life, initiative);
+        this.shield = shield;
     }
 
     public String toString() {
         String out = "";
         out = out + super.toString();
-        out = out + "Dodge = " + this.shield + "\n";
+        out = out + "Shield = " + this.shield + "\n";
         return out;
+    }
+
+    void hurt(int damages,int shield) {
+        int damagesWithShield = damages - shield;
+        super.hurt(damagesWithShield);
+
+
+
     }
 
     //get

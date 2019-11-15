@@ -46,22 +46,36 @@ public class NoobManagement {
             Scanner sc3 = new Scanner(System.in);
             int initiative = sc3.nextInt();
 
+
+
             switch (archetypeNumber) {
                 default:
                     System.out.println("What?");
                     break;
                 case 1:
-                    Warrior war1 =  new Warrior (name, damage, life, initiative,23);
-                     noobList.add(war1);
-                     break;
+                    System.out.println("Please choose the value of your shield :");
+                    Scanner sh = new Scanner (System.in);
+                    int shield = sh.nextInt();
+                    Warrior war1 =  new Warrior (name, damage, life, initiative,shield);
+                    noobList.add(war1);
+                    break;
 
                 case 2:
-                    Wizard wiz1 =  new Wizard(name, damage, life, initiative);
+                    System.out.println("Please choose your magic's Damages :");
+                    Scanner md = new Scanner (System.in);
+                    int magicDamages= md.nextInt();
+                    Wizard wiz1 =  new Wizard(name,damage,life,initiative,magicDamages);
                     noobList.add(wiz1);
                     break;
 
                 case 3:
-                    Thief thief1 =  new Thief (name, damage, life, initiative,23,34);
+                    System.out.println("Please choose your dodge's probability :");
+                    Scanner d = new Scanner (System.in);
+                    int dodge = d.nextInt();
+                    System.out.println("Please choose your critical's probability");
+                    Scanner c = new Scanner(System.in);
+                    int critical = c.nextInt();
+                    Thief thief1 =  new Thief (name, damage, life, initiative,dodge,critical);
                     noobList.add(thief1);
                     break;
 

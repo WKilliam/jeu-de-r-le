@@ -27,10 +27,6 @@ public class Noob {
 
     }
 
-    //----------------------------------------------------------------------------------------??????
-    public Noob(String choice, String choice1) {
-    }
-
 
 
     public String toString(){
@@ -50,6 +46,8 @@ public class Noob {
     void hurt(int damages) {
         this.life = this.getLife() - damages;
     }
+
+
 
 
     /**
