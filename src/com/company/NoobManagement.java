@@ -33,6 +33,10 @@ public class NoobManagement {
             Scanner sc4 = new Scanner(System.in);
             int archetypeNumber = sc4.nextInt();
 
+            if(archetypeNumber <= 0 || archetypeNumber >= 4){
+                throw new Exception("bad archetype value");
+            }
+
 
             System.out.println("Please choose your damage :");
             Scanner sc1 = new Scanner(System.in);
@@ -89,7 +93,7 @@ public class NoobManagement {
     /**
      * Function that makes delete a character. When user want to delete, he needs to enter the index of character.
      *
-     * @param nooblist
+     * @param nooblist is the Arraylist which store characters
      */
     static void deleteNoob(ArrayList nooblist) {
         try {
@@ -110,6 +114,11 @@ public class NoobManagement {
             System.out.println("Haha, lucky boy, his hour is not arrived yet!");
         }
     }
+
+    /**
+     * Function that displays all the character of the list
+     * @param noobList is the Arraylist which store characters
+     */
 
     static void displayAllCharacters(ArrayList noobList) {
         if (noobList.size() == 0) {

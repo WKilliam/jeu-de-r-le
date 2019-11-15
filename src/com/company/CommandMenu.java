@@ -86,14 +86,16 @@ public class CommandMenu {
                 break;
 
             case 5:
-                ArrayList<Noob> fight_Club = new ArrayList<Noob>();
-                FightManagement.select_character_for_fight(noobList,fight_Club);
-                FightManagement.fight_turn_OF_INITIATIVE(fight_Club);
-                NoobManagement.displayAllCharacters(fight_Club);
-                FightManagement.fight_club(fight_Club.get(0),fight_Club.get(1));
-
-
-                break;
+                    ArrayList<Noob> fight_Club = new ArrayList<Noob>();
+                    if(fight_Club.size()==0) {
+                        break;
+                    }
+                    else{
+                        FightManagement.select_character_for_fight(noobList, fight_Club);
+                        FightManagement.fight_turn_OF_INITIATIVE(fight_Club);
+                        NoobManagement.displayAllCharacters(fight_Club);
+                        FightManagement.fight_club(fight_Club.get(0), fight_Club.get(1));
+                    }
 
             case 6:
                 if(noobList.size()==0){

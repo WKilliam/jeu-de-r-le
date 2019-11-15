@@ -15,14 +15,15 @@ public class FightManagement {
 */
 
     /**
-     * THIS FUNCTION USES TWO LIST FOR CREATE A FIGHT ZONE
-     * TAKES TWO NOOB OBJECTS IN THE NOOBLIST AND PLACES CHOICE OF PLAYER IN THE FIGHT_CLUB
-     * @param nooblist LIST OF STORE BASE OBJECTS
+     * Function whose create two lists for define a fight zone
+     * Takes Two noobs  in the nooblist and places choice of player in the FIGHT_CLUB
+     * @param nooblist List of store base objects
      * @param fight_CLUB LIST USED FOR STORE TWO FIGHTERS FOR FIGHT
      */
 
     static void select_character_for_fight(ArrayList nooblist, ArrayList<Noob> fight_CLUB) {
         try {
+
             int i;
             for (i = 0; i < 2; i = i + 1) {
                 NoobManagement.displayAllCharacters(nooblist);
@@ -32,7 +33,7 @@ public class FightManagement {
                 fight_CLUB.add((Noob) nooblist.get(index1));
             }
         } catch (Exception e) {
-            System.out.println("your choose is not good ");
+            System.out.println("your choice is not good ");
         }
     }
 
@@ -84,8 +85,8 @@ public class FightManagement {
             int dmg1 = player2.getDamages();
             player2.hurt(dmg1);
             if ((player2.getLife() - dmg1) <= 0) {
-                CommandMenu.myPrint("Yellow",player1.getName() + "hits" + " has killed " + player2.getName());
-                System.out.println(player1);
+                CommandMenu.myPrint("Yellow",player1.getName() + " the "+ player1.getArchetype() + " hits" + dmg1 + " and has killed " + player2.getName());
+                System.out.println(player1.getName()+"="+player1.getArchetype());
                 break;
             } else {
 
@@ -94,8 +95,8 @@ public class FightManagement {
             }
             player1.hurt(dmg);
             if ((player1.getLife() - dmg1) <= 0) {
-                CommandMenu.myPrint("Yellow",player2.getName() +"hits" + dmg +" and has killed " + player1.getName());
-                System.out.println(player1);
+                CommandMenu.myPrint("Yellow",player2.getName() + " the " + player2.getArchetype()+" hits" + dmg +" and has killed " + player1.getName());
+                System.out.println(player2.getName()+"="+player2.getArchetype());
                 break;
             } else {
 

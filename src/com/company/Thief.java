@@ -16,7 +16,7 @@ public class Thief extends Noob {
      * @param damages    is an Integer value for damages point
      * @param life       an Integer value for Health's point
      * @param initiative is an Integer value for the initiative
-     * @param dodge      is an Integer value for the dodge proba between 0 and 100
+     * @param dodge      is an Integer value for the dodge probability between 0 and 100
      * @param critical   is an Integer value for the critical's Hit between 0 and 100
      */
     public Thief(String name, int damages, int life, int initiative, int dodge, int critical) {
