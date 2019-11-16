@@ -148,24 +148,7 @@ public class NoobManagement {
     }
 }
 
-/*
 
-
-
-        System.out.println(choice);*/
-        // System.out.println(choice + " - " + choice.getName()+" "+ choice.getLife()+" "+ choice.getDamages() +" "+ choice.getInitiative());
-        //  System.out.println("character's stats");
-
-
-
-
-
-
-
-
-
-
-       //static void displayNoobList (ArrayList noobList,Noob n)
 
 
 

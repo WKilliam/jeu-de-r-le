@@ -20,9 +20,11 @@ public class Warrior extends Noob {
         return out;
     }
 
-    void hurt(int damages,int shield) {
-        int damagesWithShield = damages - shield;
-        super.hurt(damagesWithShield);
+    void hurt(int dmg) {
+        int damagesWithShield = dmg - shield;
+        if (dmg > this.shield) {
+            super.hurt(damagesWithShield);
+        }
 
 
 

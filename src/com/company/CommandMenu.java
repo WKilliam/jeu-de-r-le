@@ -22,6 +22,7 @@ public class CommandMenu {
         myPrint("Blue","*  5-Start Fight !               *");
         myPrint("Blue","*  6-Delete a Character          *");
         myPrint("Blue","*  7-Quit                        *");
+        myPrint("Blue","*  8-Mode Test                   *");
         myPrint("Blue","**********************************");
 
     }
@@ -44,11 +45,6 @@ public class CommandMenu {
         catch(Exception e){
             System.out.println("Invalid choice");
         }
-
-        if(choice > 7 || choice < 1){
-            choice = -1;
-        }
-        //System.out.println(choice);
 
         return choice;
 
@@ -86,15 +82,15 @@ public class CommandMenu {
                 break;
 
             case 5:
-                    ArrayList<Noob> fight_Club = new ArrayList<Noob>();
-                    if(fight_Club.size()==0) {
+                NoobManagement.displayAllCharacters(noobList);
+                    if(noobList.size() > 0) {
+                     ArrayList <Noob> fightersList = FightManagement.selectFighters(noobList);
+                     FightManagement.battleBegins(fightersList.get(0),fightersList.get(1));
                         break;
                     }
                     else{
-                    /*    FightManagement.selectFighter(noobList, fight_Club);
-                        FightManagement.fight_turn_OF_INITIATIVE(fight_Club);
-                        NoobManagement.displayAllCharacters(fight_Club);
-                        FightManagement.fight_club(fight_Club.get(0), fight_Club.get(1)); */
+                        System.out.println("There no fighters sorry, please creates at least 2!");
+
                     }
 
             case 6:
@@ -115,6 +111,15 @@ public class CommandMenu {
                 continueGame = false;
                 break;
 
+            case 8:
+                Thief voleur= new Thief("ALIBABA",50,400,45,0,100);
+                Warrior guerrier = new Warrior("Conan" , 20, 500, 23, 15);
+                Wizard mage = new Wizard ("Gandalf",45, 52, 23, 50);
+                Noob noob = new Noob("Kevin", "noob", 23,25, 36);
+                noobList.add(voleur);
+                noobList.add(guerrier);
+                noobList.add(mage);
+                noobList.add(noob);
         }
         return continueGame;
     }

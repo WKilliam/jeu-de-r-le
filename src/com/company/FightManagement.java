@@ -12,53 +12,55 @@ public class FightManagement {
     }
 
 
-/*
-    static void launchAttack(Noob fighter1, Noob fighter2) {
+    static void launchFight(Noob fighter1, Noob fighter2) {
         //fighter1 is attacked by fighter2
-        fighter1.hurt(fighter2.getDamages());
-        System.out.println(fighter1.getLife());
-    }
-*/
-}
+        int i = 1;
+        while (fighter1.getLife() > 0 && fighter2.getLife() > 0) {
+            CommandMenu.myPrint("Yellow", "Round " + i);
+            int damages = fighter2.getDamages();
+            fighter1.hurt(damages);
+            CommandMenu.myPrint("Green",fighter2.getName() + " inflicts " + damages + " to " + fighter1.getName() + " he remains " + fighter1.getLife() + " Health points");
 
-    /**
-     * FIGHT_CLUB FUNCTION IT'S THE VIP CLUB FOR FIGHTER NOOB OBJECT
-     * HE TAKE TWO NOOB OBJECT FOR THE FIGHT STAGE
-     * @param player1 THIS IS OBJECT NOOB USED FOR FIGHT
-     * @param player2 THIS IS OBJECT NOOB USED FOR FIGHT
-     */
+            damages= fighter1.getDamages();
+            fighter2.hurt(damages);
+            CommandMenu.myPrint("Blue",fighter1.getName() + " inflicts " + damages + " to " + fighter2.getName() + " he remains " + fighter2.getLife() + " Health points");
+            i++;
 
-    //static void selectFighter(Noob fighter1, Noob fighter2, ArrayList noobList) {
+            System.out.println("");
+        }
+        if (fighter1.getLife() <= 0) {
+            CommandMenu.myPrint("Red",fighter1.getName() + " has been defeated by " + fighter2.getName() + " the " + fighter2.getArchetype());
+        }else{
+            CommandMenu.myPrint("Red",fighter2.getName() + " has been defeated by " + fighter1.getName() + " the " + fighter1.getArchetype());
 
-
-    //}
-  /*      int i=0;
-
-        while (player1.getLife() > 0 && player2.getLife() > 0) {
-
-            int dmg = player1.getDamages();
-            int dmg1 = player2.getDamages();
-            player2.hurt(dmg1);
-            if ((player2.getLife() - dmg1) <= 0) {
-                CommandMenu.myPrint("Yellow",player1.getName() + " the "+ player1.getArchetype() + " hits" + dmg1 + " and has killed " + player2.getName());
-                System.out.println(player1.getName()+"="+player1.getArchetype());
-                break;
-            } else {
-
-                System.out.println("Round : "+ i++);
-                System.out.println(player1.getName() + " hits " + dmg + "  " + player2.getName() + " " + player2.getLife());
-            }
-            player1.hurt(dmg);
-            if ((player1.getLife() - dmg1) <= 0) {
-                CommandMenu.myPrint("Yellow",player2.getName() + " the " + player2.getArchetype()+" hits" + dmg +" and has killed " + player1.getName());
-                System.out.println(player2.getName()+"="+player2.getArchetype());
-                break;
-            } else {
-
-                System.out.println("Round : "+ i++);
-                System.out.println(player2.getName() + " inflict " + dmg1 + " to " + player1.getName() + " remains  " + player1.getLife()+ " Health point");
-            }
         }
     }
-}*/
+
+
+    static ArrayList<Noob> selectFighters(ArrayList<Noob> noobList) {
+        ArrayList<Noob> fightersList = new ArrayList<Noob>();
+        System.out.println("Please select a fighter :");
+        Scanner sc = new Scanner(System.in);
+        int choice1 = sc.nextInt();
+        Noob fighter1 = (Noob) noobList.get(choice1);
+        fightersList.add(fighter1);
+        System.out.println("Please select a second fighter :");
+        Scanner sc1 = new Scanner(System.in);
+        int choice2 = sc1.nextInt();
+        Noob fighter2 = (Noob) noobList.get(choice2);
+        fightersList.add(fighter2);
+        return fightersList;
+    }
+
+    static void battleBegins(Noob fighter1, Noob fighter2) {
+
+        if (fighter1.getInitiative() < fighter2.getInitiative()) {
+            launchFight(fighter1, fighter2);
+        } else {
+            launchFight(fighter2, fighter1);
+        }
+
+    }
+}
+
 

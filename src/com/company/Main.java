@@ -34,22 +34,5 @@ public class Main {
 
 
 
-        Warrior romain = new Warrior("romain",100,100,100,20);
-
-        Thief teddy = new Thief("teddy",100,100,100,23,23);
-
-        teddy.getDamages();
-        System.out.println(teddy.getDamages());
-        System.out.println(teddy.getDamages());
-
-
-
-
-
-
-
-
-
-
     }
 }
