@@ -6,6 +6,12 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class FightManagement {
+
+    public FightManagement() {
+
+    }
+
+
 /*
     static void launchAttack(Noob fighter1, Noob fighter2) {
         //fighter1 is attacked by fighter2
@@ -13,61 +19,7 @@ public class FightManagement {
         System.out.println(fighter1.getLife());
     }
 */
-
-    /**
-     * Function whose create two lists for define a fight zone
-     * Takes Two noobs  in the nooblist and places choice of player in the FIGHT_CLUB
-     * @param nooblist List of store base objects
-     * @param fight_CLUB LIST USED FOR STORE TWO FIGHTERS FOR FIGHT
-     */
-
-    static void select_character_for_fight(ArrayList nooblist, ArrayList<Noob> fight_CLUB) {
-        try {
-
-            int i;
-            for (i = 0; i < 2; i = i + 1) {
-                NoobManagement.displayAllCharacters(nooblist);
-                System.out.println("choose character for the fight : ");
-                Scanner sc = new Scanner(System.in);
-                int index1 = sc.nextInt();
-                fight_CLUB.add((Noob) nooblist.get(index1));
-            }
-        } catch (Exception e) {
-            System.out.println("your choice is not good ");
-        }
-    }
-
-    /**
-     * FUNCTION TAKE THE LIST FOR CHOOSE THE NOOB OBJECT WITH MORE INITIATIVE
-     * @param list THIS LIST IS THE FIGHT CLUB OF THE FIGHTER
-     */
-
-    static void fight_turn_OF_INITIATIVE(ArrayList<Noob> list) {
-        int coin = (int) (Math.random() * 1);
-        Noob chr1 = list.get(0);
-        Noob chr2 = list.get(1);
-        int chr11 = chr1.getInitiative();
-        int chr12 = chr2.getInitiative();
-        if (chr11 < chr12) {
-            list.add(chr2);
-            list.add(chr1);
-            list.remove(0);
-            list.remove(1);
-        }
-        if (chr11 == chr12) {
-            if (coin == 0) {
-                list.add(chr2);
-                list.add(chr1);
-                list.remove(0);
-                list.remove(1);
-            } else {
-                list.add(chr1);
-                list.add(chr2);
-                list.remove(0);
-                list.remove(1);
-            }
-        }
-    }
+}
 
     /**
      * FIGHT_CLUB FUNCTION IT'S THE VIP CLUB FOR FIGHTER NOOB OBJECT
@@ -76,8 +28,11 @@ public class FightManagement {
      * @param player2 THIS IS OBJECT NOOB USED FOR FIGHT
      */
 
-    static void fight_club(Noob player1, Noob player2) {
-        int i=0;
+    //static void selectFighter(Noob fighter1, Noob fighter2, ArrayList noobList) {
+
+
+    //}
+  /*      int i=0;
 
         while (player1.getLife() > 0 && player2.getLife() > 0) {
 
@@ -105,5 +60,5 @@ public class FightManagement {
             }
         }
     }
-}
+}*/
 

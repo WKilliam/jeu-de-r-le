@@ -91,10 +91,10 @@ public class CommandMenu {
                         break;
                     }
                     else{
-                        FightManagement.select_character_for_fight(noobList, fight_Club);
+                    /*    FightManagement.selectFighter(noobList, fight_Club);
                         FightManagement.fight_turn_OF_INITIATIVE(fight_Club);
                         NoobManagement.displayAllCharacters(fight_Club);
-                        FightManagement.fight_club(fight_Club.get(0), fight_Club.get(1));
+                        FightManagement.fight_club(fight_Club.get(0), fight_Club.get(1)); */
                     }
 
             case 6:

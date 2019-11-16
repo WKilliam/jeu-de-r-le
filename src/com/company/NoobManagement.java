@@ -23,17 +23,18 @@ public class NoobManagement {
      * @return an object. Contains the name, health points, damages and initiative's character.
      */
     static void createCharacter(ArrayList noobList) {
+        String archetype = "Noob";
 
         try {
             System.out.println("Please choose your name :");
             Scanner sc = new Scanner(System.in);
             String name = sc.nextLine();
 
-            System.out.println("Please choose your archetype : 1 -> Warrior / 2 -> Wizard / 3 -> Thief");
+            System.out.println("Please choose your archetype : 1 -> Warrior / 2 -> Wizard / 3 -> Thief 4 -> Noob");
             Scanner sc4 = new Scanner(System.in);
             int archetypeNumber = sc4.nextInt();
 
-            if(archetypeNumber <= 0 || archetypeNumber >= 4){
+            if(archetypeNumber <= 0 || archetypeNumber >= 5){
                 throw new Exception("bad archetype value");
             }
 
@@ -82,6 +83,12 @@ public class NoobManagement {
                     Thief thief1 =  new Thief (name, damage, life, initiative,dodge,critical);
                     noobList.add(thief1);
                     break;
+
+                case 4:
+                    Noob noob1 = new Noob(name,archetype,damage, life,initiative);
+                    noobList.add(noob1);
+                    break;
+
 
             }
 
